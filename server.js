@@ -29,7 +29,7 @@ app.use("/api/data", serviceRoute)
 app.use("/api/admin", adminRoute)
 app.use(errorMiddleware);//error middleware(line should be placed exactly above connection otherwise error middleware will not work)
 
-const PORT = process.env.BASE_PORT
+const PORT = process.env.BASE_PORT || 5000
 connectDb().then(() => {
     app.listen(PORT, () => {
       console.log(`server is running at port: ${PORT}`);
