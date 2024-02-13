@@ -6,19 +6,13 @@ const authRoute = require('./router/auth-router');// .js is default
 const contactRoute = require('./router/contact-router');// .js is default
 const serviceRoute = require('./router/service-router');// .js is default
 const adminRoute = require('./router/admin-router');// .js is default
-const BASE_URL = process.env.BASE_URL
+// const BASE_URL = process.env.BASE_URL
 
 const connectDb = require("./utils/db");
 const errorMiddleware = require("./middlewares/error-middleware");
 
 
-const corsOptions = {
-  origin: `${BASE_URL}`,
-  methods: "GET, POST, PUT, DELETE, PATCH, HEAD",
-  credentials: true,
-};
-
-app.use(cors(corsOptions));
+app.use(cors());
 
 app.use(express.json());//necessary for json post requests
 
